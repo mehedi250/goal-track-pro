@@ -1,64 +1,150 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+### **`GoalTrack Pro`**  
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**GoalTrack Pro** is a powerful project and task management system designed to help teams stay organized, track progress, and achieve their goals efficiently. With role-based access, real-time progress tracking, and insightful analytics, this tool is ideal for teams and managers who want to streamline workflows and enhance productivity.  
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## **Features**  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### **Core Features**  
+- **Role-Based Access Control**:  
+  - **Admin**: Manage users, teams, and overall platform settings.  
+  - **Manager**: Create projects, assign tasks, and monitor team progress.  
+  - **Team Member**: View and complete assigned tasks.  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Project Management**:  
+  - Create projects with start and end dates.  
+  - Assign team members to projects.  
+  - Monitor real-time project progress based on task completion.  
 
-## Learning Laravel
+- **Task Management**:  
+  - Add tasks to projects with priority levels and deadlines.  
+  - Assign tasks to team members.  
+  - Track task completion and weighted progress with the new `value` feature.  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Notifications**:  
+  - Receive updates for task deadlines and project changes.  
+  - Alerts for overdue tasks and progress milestones.  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Analytics**:  
+  - View team and user performance insights.  
+  - Analyze completed tasks and progress trends.  
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## **Tech Stack**  
 
-### Premium Partners
+| **Component**      | **Technology**             |  
+|---------------------|----------------------------|  
+| **Backend**         | Laravel (PHP)             |  
+| **Frontend**        | Blade template       |  
+| **Database**        | MySQL                     |  
+| **Development Tools** | Docker, Composer, NPM   |  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+## **Getting Started**  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Follow these steps to set up the project locally:  
 
-## Code of Conduct
+### **Prerequisites**  
+- PHP 7.4+  
+- Composer  
+- Node.js  
+- MySQL  
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### **Installation**  
 
-## Security Vulnerabilities
+1. **Clone the repository**:  
+   ```bash
+   git clone https://github.com/yourusername/goal-track-pro.git
+   cd goal-track-pro
+   ```  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. **Install backend dependencies**:  
+   ```bash
+   composer install
+   ```  
 
-## License
+3. **Install frontend dependencies** (Optional):  
+   ```bash
+   npm install
+   ```  
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. **Set up the environment**:  
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```  
+   Update the `.env` file with your database and other configuration details.  
+
+5. **Run database migrations and seeders**:  
+   ```bash
+   php artisan migrate --seed
+   ```  
+
+6. **Start the development server**:  
+   ```bash
+   php artisan serve
+   ```  
+
+7. **Access the app**:  
+   Open your browser and navigate to `http://localhost:8000`.  
+
+---
+
+## **Usage**  
+
+- **Admins**:  
+  - Add managers, team members, and configure settings.  
+
+- **Managers**:  
+  - Create and assign projects to team members.  
+  - Monitor task progress and adjust project goals.  
+
+- **Team Members**:  
+  - View assigned tasks.  
+  - Update task statuses and provide progress updates.  
+
+---
+
+## **Future Enhancements**  
+
+- **Calendar Integration**: Sync with Google Calendar or Outlook.  
+- **Mobile App**: Launch a mobile-friendly version.  
+- **Advanced Analytics**: Add custom dashboards for deeper insights.  
+- **Gantt Charts**: Visualize project timelines and dependencies.  
+
+---
+
+## **Contributing**  
+
+We welcome contributions! Follow these steps to contribute:  
+
+1. Fork the repository.  
+2. Create a new branch for your feature:  
+   ```bash
+   git checkout -b feature-name
+   ```  
+3. Commit your changes and push:  
+   ```bash
+   git commit -m "Add your message here"  
+   git push origin feature-name
+   ```  
+4. Open a Pull Request on GitHub.  
+
+---
+
+## **License**  
+
+This project is licensed under the [MIT License](LICENSE).  
+
+---
+
+## **Contact**  
+
+For questions or support, feel free to reach out:  
+- **Email**: mhshawon250@gmail.com  
+
+---  
+
