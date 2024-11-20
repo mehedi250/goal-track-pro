@@ -12,15 +12,24 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    // User Role
+    const ROLE_ADMIN = 'ADMIN';
+    const ROLE_MANAGER = 'MANAGER';
+    const ROLE_MEMBER = 'MEMBER';
+
+    // Status
+    const STATUS_ACTIVE = 'ACTIVE';
+    const STATUS_INACTIVE = 'INACTIVE';
+
+    
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name',              // STRING, NOT NULL
+        'email',             // STRING, UNIQUE, NOT NULL
+        'password',          // STRING, NOT NULL
+        'joining_date',      // DATE, NULLABLE
+        'exit_date',         // DATE, NULLABLE
+        'role',              // ENUM ['ADMIN', 'MANAGER', 'MEMBER'], NOT NULL
+        'status',            // ENUM ['ACTIVE', 'INACTIVE'], default 'ACTIVE'
     ];
 
     /**
@@ -41,4 +50,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function teams()
+    {
+        return $this->hasMany(Team::class, 'manager_id');
+    }
 }
