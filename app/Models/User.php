@@ -51,8 +51,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Relationship with teams 
     public function teams()
     {
         return $this->hasMany(Team::class, 'manager_id');
+    }
+
+    // Relationship with tasks (user can be assigned multiple tasks)
+    public function tasks()
+    {
+        return $this->hasMany(Task::class, 'assigned_to');
+    }
+
+    // Relationship with notifications (one user can have many notifications)
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    // Relationship with projects (projects created by this user)
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'manager_id');
     }
 }
