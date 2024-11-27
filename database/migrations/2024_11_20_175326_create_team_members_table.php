@@ -17,6 +17,7 @@ class CreateTeamMembersTable extends Migration
             $table->id();
             $table->bigInteger('team_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
+            $table->enum('role', ['MANAGER', 'MEMBER'])->default('MEMBER');
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->timestamps();
         });

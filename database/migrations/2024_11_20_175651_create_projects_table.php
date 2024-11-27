@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->text('description')->nullable();
             $table->bigInteger('team_id')->unsigned();
             $table->bigInteger('manager_id')->unsigned();
+            $table->bigInteger('created_by')->unsigned();
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('total_value')->default(0);
