@@ -20,6 +20,7 @@ class Project extends Model
         'description',     // TEXT, NULLABLE
         'team_id',         // BIGINT UNSIGNED, NOT NULL
         'manager_id',      // BIGINT UNSIGNED, NOT NULL
+        'created_by',      // BIGINT UNSIGNED, NOT NULL
         'start_date',      // DATE, NOT NULL
         'end_date',        // DATE, NOT NULL
         'total_value',     // INTEGER, default 0
@@ -37,5 +38,10 @@ class Project extends Model
     public function manager()
     {
         return $this->belongsTo(User::class, 'manager_id');
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
     }
 }

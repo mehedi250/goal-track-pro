@@ -15,9 +15,14 @@ class TeamMember extends Model
     const STATUS_ACTIVE = 'ACTIVE';
     const STATUS_INACTIVE = 'INACTIVE';
 
+    // Role
+    const ROLE_MANAGER = 'MANAGER';
+    const ROLE_MEMBER = 'MEMBER';
+
     protected $fillable = [
         'team_id',  // BIGINT UNSIGNED, NOT NULL
         'user_id',  // BIGINT UNSIGNED, NOT NULL
+        'role',     // ENUM ['MANAGER', 'MEMBER'], default 'MEMBER'
         'status',   // ENUM ['ACTIVE', 'INACTIVE'], default 'ACTIVE'
     ];
 

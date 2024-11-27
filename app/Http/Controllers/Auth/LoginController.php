@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -36,5 +40,29 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        // Validate the request
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+            'role' => 'required|string',
+        ]);
+
+
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password,
+            'role' => $request->role,
+        ])) {
+            return redirect()->intended('/')->with('status', 'Logged in successfully!');
+        }
+
+        // Login failed
+        throw ValidationException::withMessages([
+            'email' => ['These credentials do not match our records.'],
+        ]);
     }
 }
