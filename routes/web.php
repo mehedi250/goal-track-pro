@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('welcome');
+    return view('pages.dashboard.index');
 });
 
 // Auth::routes();
